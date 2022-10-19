@@ -41,6 +41,7 @@ const renderPokemon = async (pokemon) => {
         inputSearch.value = '';
         errorScreen.style.display = 'initial';
         errorScreen.innerHTML = "It wasn't possible to found your pokemon, please try searching for another one.";
+        searchPokemon = 0;
     }
 
 }
