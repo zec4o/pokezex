@@ -1,1 +1,1 @@
-# <p text align=center> Pokezex 🌱 </p>
+# <p text align=center> Pokézex 🌱 </p>
