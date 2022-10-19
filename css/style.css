@@ -20,6 +20,25 @@ main {
     position: relative;
 }
 
+.errorScreen {
+    position: absolute;
+    background-color: #333;
+    width: 56%;
+    height: 25.3%;
+    bottom: 52.2%;
+    left: 53.3%;
+    padding: 6%;
+    border-radius: 4%;
+    transform: translate(-63%, 20%);
+
+    text-align: center;
+    color: #e3e3e3;
+    font-size: clamp(8px, 5vw, 0.9rem);
+    word-wrap: break-word;
+    
+
+}
+
 .pokezex {
     width: 100%;
     max-width: 425px;
@@ -92,4 +111,31 @@ main {
 .button:active {
     box-shadow: inset -4px 4px 0 #222;
     font-size: 0.9rem;
+}
+
+.reset {
+    position: absolute;
+    bottom: 20%;
+    left: 54%;
+    width: 25%;
+    transform: translate(-57%, 0);
+    display: flex;
+    gap: 20px;
+}
+
+.btn-reset {
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px, 5vw, 0.8rem);
+    font-weight: 600;
+    color: white;
+    background-color: #cc0000;
+    box-shadow: -1px 1.5px 0 #222, -2px 4px 0 #000;
+}
+
+.btn-reset:active {
+    box-shadow: inset -2px 2px 0 #222;
+    font-size: 0.75rem;
 }
