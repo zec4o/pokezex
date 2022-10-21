@@ -29,19 +29,28 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
 
     if (data) {
+        if (data.id < 650) {
+            pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        } else {
+            pokemonImage.src = data['sprites']['other']['official-artwork']['front_default'];
+        }
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         inputSearch.value = '';
         searchPokemon = data.id;
         errorScreen.style.display = 'none';
+        //Se houver 'data' na request, vai retornar o 
+        //pokémon e armazenar data.id em searchPokemon
     } else {
         pokemonName.innerHTML = "Not Found :c";
         pokemonNumber.innerHTML = "";
         inputSearch.value = '';
         errorScreen.style.display = 'initial';
-        errorScreen.innerHTML = "It wasn't possible to found your pokemon, please try searching for another one.";
-        searchPokemon = 0;
+        errorScreen.innerHTML = "It wasn't possible to found this pokémon, please try searching for another one.";
+        searchPokemon = 99999;
+        //Se não houver 'data' na request, vai retornar o erro
+        //e setar searchPokemon em 99999 para facilitar o
+        //reset.
     }
 
 }
